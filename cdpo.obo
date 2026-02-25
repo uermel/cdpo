@@ -1,0 +1,291 @@
+format-version: 1.2
+data-version: 2025-02-24
+idspace: dc http://purl.org/dc/elements/1.1/ 
+idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
+idspace: terms http://purl.org/dc/terms/ 
+remark: CDPO is built on the Basic Formal Ontology (BFO) and imports terms from OBI and IAO.
+ontology: cdpo
+property_value: dc:creator "CryoET Data Portal Team" xsd:string
+property_value: dc:description "An ontology for describing non-biological and non-relevant components observed in cryo-electron tomography (cryo-ET) data, including sample support materials, contamination, artifacts, and fiducial markers." xsd:string
+property_value: dc:title "CryoET Data Portal Ontology" xsd:string
+property_value: owl:versionInfo "2025-02-24" xsd:string
+property_value: terms:license https://creativecommons.org/licenses/by/4.0/
+
+[Term]
+id: BFO:0000001
+name: entity
+def: "An entity is anything that exists or has existed or will exist." []
+property_value: IAO:0000119 "BFO 2.0" xsd:string
+
+[Term]
+id: BFO:0000002
+name: continuant
+def: "An entity that persists, endures, or continues to exist through time while maintaining its identity." []
+is_a: BFO:0000001 ! entity
+property_value: IAO:0000119 "BFO 2.0" xsd:string
+
+[Term]
+id: BFO:0000004
+name: independent continuant
+def: "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything." []
+is_a: BFO:0000002 ! continuant
+property_value: IAO:0000119 "BFO 2.0" xsd:string
+
+[Term]
+id: BFO:0000024
+name: fiat object part
+def: "A material entity that is a proper part of some larger object, and that is not itself an object, but is demarcated from the remainder of the object by one or more fiat surfaces." []
+is_a: BFO:0000040 ! material entity
+property_value: IAO:0000119 "BFO 2.0" xsd:string
+
+[Term]
+id: BFO:0000029
+name: site
+def: "A three-dimensional immaterial entity that is (partially or wholly) bounded by a material entity or it is a three-dimensional immaterial part thereof." []
+is_a: BFO:0000141 ! immaterial entity
+property_value: IAO:0000119 "BFO 2.0" xsd:string
+
+[Term]
+id: BFO:0000040
+name: material entity
+def: "An independent continuant that has some portion of matter as proper or improper continuant part." []
+is_a: BFO:0000004 ! independent continuant
+property_value: IAO:0000119 "BFO 2.0" xsd:string
+
+[Term]
+id: BFO:0000141
+name: immaterial entity
+def: "An independent continuant that has no material entities as parts." []
+is_a: BFO:0000004 ! independent continuant
+property_value: IAO:0000119 "BFO 2.0" xsd:string
+
+[Term]
+id: CDPO:0000001
+name: sample
+def: "The material of interest being studied, typically biological in nature, that is contained within and imaged as part of the specimen." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: CDPO:0000002
+name: sample support component
+def: "Any component of the specimen support used in electron microscopy sample preparation." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: CDPO:0000003
+name: sample support material
+def: "Any component of the specimen support." []
+is_a: CDPO:0000002 ! sample support component
+
+[Term]
+id: CDPO:0000004
+name: electron microscopy grid
+def: "Any part of the metal sample support grid of an electron microscopy specimen." []
+is_a: CDPO:0000002 ! sample support component
+
+[Term]
+id: CDPO:0000005
+name: support film
+def: "Any part of the thin support applied to an electron microscopy grid." []
+is_a: CDPO:0000002 ! sample support component
+
+[Term]
+id: CDPO:0000006
+name: carbon support film
+def: "Any part of the thin support (amorphous carbon, graphene or graphene oxide) applied to an electron microscopy grid." []
+is_a: CDPO:0000005 ! support film
+
+[Term]
+id: CDPO:0000007
+name: holey carbon film
+def: "Any part of a holey carbon support material on an electron microscopy grid." []
+is_a: CDPO:0000006 ! carbon support film
+
+[Term]
+id: CDPO:0000008
+name: lacey carbon film
+def: "Any part of a lacey carbon support material on an electron microscopy grid." []
+is_a: CDPO:0000006 ! carbon support film
+
+[Term]
+id: CDPO:0000009
+name: gold support film
+def: "Any part of the thin support (gold) applied to an electron microscopy grid." []
+is_a: CDPO:0000005 ! support film
+
+[Term]
+id: CDPO:0000010
+name: holey gold film
+def: "Any part of a holey gold support material on an electron microscopy grid." []
+is_a: CDPO:0000009 ! gold support film
+
+[Term]
+id: CDPO:0000011
+name: support film fragment
+def: "Any detached part of the sample support film." []
+is_a: CDPO:0000005 ! support film
+
+[Term]
+id: CDPO:0000012
+name: vacuum region
+def: "The empty space surrounding the specimen in the tomogram, representing areas with no material." []
+is_a: BFO:0000029 ! site
+
+[Term]
+id: CDPO:0000013
+name: contamination
+def: "Unwanted material deposited on or near the specimen that is not part of the biological sample." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: CDPO:0000014
+name: ice particle contamination
+def: "Crystalline or amorphous ice particles deposited on the specimen from atmospheric moisture." []
+is_a: CDPO:0000013 ! contamination
+
+[Term]
+id: CDPO:0000015
+name: sputter particle contamination
+def: "Metal or other particles deposited from sputtering during FIB milling or coating processes." []
+is_a: CDPO:0000013 ! contamination
+
+[Term]
+id: CDPO:0000016
+name: leopard skin contamination
+def: "A pattern of contamination or damage characterized by irregular spots on the specimen surface, typically from beam damage or devitrification." []
+is_a: CDPO:0000013 ! contamination
+
+[Term]
+id: CDPO:0000017
+name: sample artifact region
+def: "Any unintended alteration or feature in the specimen caused by sample preparation or imaging." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: CDPO:0000018
+name: non-vitreous region
+def: "An area of the specimen where the ice has crystallized rather than remaining in a vitrified (amorphous) state." []
+is_a: CDPO:0000017 ! sample artifact region
+
+[Term]
+id: CDPO:0000019
+name: dose-damaged region
+def: "An area of the specimen that has been altered due to excessive electron dose exposure." []
+is_a: CDPO:0000017 ! sample artifact region
+
+[Term]
+id: CDPO:0000020
+name: protein aggregate
+def: "Aggregated or denatured protein material that is not representative of native biological structures." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: CDPO:0000021
+name: curtaining artifact region
+def: "Vertical striping pattern in FIB-milled lamellae caused by differential milling rates." []
+is_a: CDPO:0000017 ! sample artifact region
+
+[Term]
+id: CDPO:0000022
+name: sample tear
+def: "Physical discontinuity in the specimen caused by mechanical stress during handling or imaging." []
+is_a: CDPO:0000017 ! sample artifact region
+
+[Term]
+id: CDPO:0000023
+name: fiducial marker
+def: "A reference marker used for alignment during tomographic reconstruction." []
+is_a: BFO:0000040 ! material entity
+
+[Term]
+id: CDPO:0000024
+name: gold fiducial nanoparticle
+def: "Gold nanoparticles added to the specimen surface to serve as alignment markers for tomographic reconstruction." []
+is_a: CDPO:0000023 ! fiducial marker
+
+[Term]
+id: CDPO:0000025
+name: gold CLEM label
+def: "Gold particles used as correlative light and electron microscopy markers to identify specific locations." []
+is_a: CDPO:0000023 ! fiducial marker
+
+[Term]
+id: CDPO:0000026
+name: tomographic image artifact
+def: "A feature in a tomographic image that arises from data acquisition or processing rather than the specimen itself." []
+is_a: IAO:0000101 ! image
+
+[Term]
+id: CDPO:0000027
+name: tomographic reconstruction artifact
+def: "A feature in the reconstructed tomogram that arises from the reconstruction process rather than the specimen." []
+is_a: CDPO:0000026 ! tomographic image artifact
+
+[Term]
+id: CDPO:0000028
+name: unreconstructed region
+def: "An area of the tomogram that could not be properly reconstructed, typically due to missing wedge effects." []
+is_a: CDPO:0000027 ! tomographic reconstruction artifact
+
+[Term]
+id: CDPO:0000029
+name: streak artifact
+def: "Linear artifacts radiating from high-contrast features, caused by limited tilt range or alignment errors." []
+is_a: CDPO:0000027 ! tomographic reconstruction artifact
+
+[Term]
+id: CDPO:0000030
+name: sample charging artifact
+def: "Image distortion caused by electrostatic charge accumulation on the specimen." []
+is_a: CDPO:0000026 ! tomographic image artifact
+
+[Term]
+id: CDPO:0000031
+name: laser phase plate off-plane artifact
+def: "Image artifact resulting from misalignment of the laser phase plate out of the focal plane." []
+is_a: CDPO:0000026 ! tomographic image artifact
+
+[Term]
+id: CDPO:0000032
+name: laser phase plate off-node artifact
+def: "Image artifact resulting from the laser phase plate being positioned away from the optimal node position." []
+is_a: CDPO:0000026 ! tomographic image artifact
+
+[Term]
+id: CDPO:0000033
+name: tomogram edge
+def: "The boundary of the reconstructed tomogram volume." []
+is_a: BFO:0000024 ! fiat object part
+
+[Term]
+id: IAO:0000030
+name: information content entity
+def: "A generically dependent continuant that is about some thing." []
+is_a: BFO:0000001 ! entity
+property_value: IAO:0000119 "IAO" xsd:string
+
+[Term]
+id: IAO:0000101
+name: image
+def: "An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected surface." []
+is_a: IAO:0000030 ! information content entity
+property_value: IAO:0000119 "IAO" xsd:string
+
+[Term]
+id: OBI:0100051
+name: specimen
+def: "A material entity that has the specimen role and is collected from an organism or derived from other specimens." []
+is_a: BFO:0000040 ! material entity
+
+[Typedef]
+id: BFO:0000050
+name: part of
+def: "A core relation that holds between a part and its whole." []
+property_value: IAO:0000119 "BFO" xsd:string
+
+[Typedef]
+id: BFO:0000051
+name: has part
+def: "A core relation that holds between a whole and its part." []
+property_value: IAO:0000119 "BFO" xsd:string
+

@@ -1,0 +1,14 @@
+# OBI terms to import for CDPO
+# Ontology for Biomedical Investigations terms
+
+# specimen
+http://purl.obolibrary.org/obo/OBI_0100051
+
+# device
+http://purl.obolibrary.org/obo/OBI_0000968
+
+# electron microscopy imaging assay
+http://purl.obolibrary.org/obo/OBI_0002119
+
+# material entity (from BFO, often imported via OBI)
+http://purl.obolibrary.org/obo/BFO_0000040

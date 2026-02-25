@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <!-- Local catalog for CDPO ontology imports -->
+
+    <!-- BFO import -->
+    <uri id="BFO" name="http://purl.obolibrary.org/obo/bfo.owl" uri="imports/bfo_import.owl"/>
+
+    <!-- IAO import module -->
+    <uri id="IAO" name="http://purl.obolibrary.org/obo/iao.owl" uri="imports/iao_import.owl"/>
+
+    <!-- OBI import module -->
+    <uri id="OBI" name="http://purl.obolibrary.org/obo/obi.owl" uri="imports/obi_import.owl"/>
+
+    <!-- CDPO main ontology -->
+    <uri id="CDPO" name="http://purl.obolibrary.org/obo/cdpo.owl" uri="cdpo-edit.owl"/>
+</catalog>

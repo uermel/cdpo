@@ -1,0 +1,447 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/cdpo.owl#"
+     xml:base="http://purl.obolibrary.org/obo/cdpo.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cdpo.owl">
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cdpo/2025-02-24/cdpo.owl"/>
+        <dc:title xml:lang="en">CryoET Data Portal Ontology</dc:title>
+        <dc:description xml:lang="en">An ontology for describing non-biological and non-relevant components observed in cryo-electron tomography (cryo-ET) data, including sample support materials, contamination, artifacts, and fiducial markers.</dc:description>
+        <dc:creator>CryoET Data Portal Team</dc:creator>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <owl:versionInfo>2025-02-24</owl:versionInfo>
+        <rdfs:comment xml:lang="en">CDPO is built on the Basic Formal Ontology (BFO) and imports terms from OBI and IAO.</rdfs:comment>
+
+        <!-- Imports - uncomment when import modules are available -->
+        <!-- <owl:imports rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/> -->
+    </owl:Ontology>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115">
+        <rdfs:label xml:lang="en">definition</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The official definition, explaining the meaning of a class or property. Definitions should be unique and non-circular.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">IAO</obo:IAO_0000119>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000119">
+        <rdfs:label xml:lang="en">definition source</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Formal citation, e.g., a URI, to the source of the definition.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">IAO</obo:IAO_0000119>
+    </owl:AnnotationProperty>
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+        <rdfs:label xml:lang="en">part of</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A core relation that holds between a part and its whole.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">BFO</obo:IAO_0000119>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000051">
+        <rdfs:label xml:lang="en">has part</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A core relation that holds between a whole and its part.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">BFO</obo:IAO_0000119>
+    </owl:ObjectProperty>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes - External References
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- BFO Upper Classes -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000001">
+        <rdfs:label xml:lang="en">entity</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An entity is anything that exists or has existed or will exist.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">BFO 2.0</obo:IAO_0000119>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <rdfs:label xml:lang="en">continuant</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An entity that persists, endures, or continues to exist through time while maintaining its identity.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">BFO 2.0</obo:IAO_0000119>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000004">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:label xml:lang="en">independent continuant</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">BFO 2.0</obo:IAO_0000119>
+    </owl:Class>
+
+    <!-- BFO Classes used in CDPO -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000040">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:label xml:lang="en">material entity</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An independent continuant that has some portion of matter as proper or improper continuant part.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">BFO 2.0</obo:IAO_0000119>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000141">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
+        <rdfs:label xml:lang="en">immaterial entity</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An independent continuant that has no material entities as parts.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">BFO 2.0</obo:IAO_0000119>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000029">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
+        <rdfs:label xml:lang="en">site</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A three-dimensional immaterial entity that is (partially or wholly) bounded by a material entity or it is a three-dimensional immaterial part thereof.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">BFO 2.0</obo:IAO_0000119>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000024">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label xml:lang="en">fiat object part</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A material entity that is a proper part of some larger object, and that is not itself an object, but is demarcated from the remainder of the object by one or more fiat surfaces.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">BFO 2.0</obo:IAO_0000119>
+    </owl:Class>
+
+    <!-- OBI specimen -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/OBI_0100051">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label xml:lang="en">specimen</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A material entity that has the specimen role and is collected from an organism or derived from other specimens.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- IAO Classes -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000030">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
+        <rdfs:label xml:lang="en">information content entity</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A generically dependent continuant that is about some thing.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">IAO</obo:IAO_0000119>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/IAO_0000101">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+        <rdfs:label xml:lang="en">image</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An image is an affine projection to a two dimensional surface, of measurements of some quality of an entity or entities repeated at regular intervals across a spatial range, where the measurements are represented as color and luminosity on the projected surface.</obo:IAO_0000115>
+        <obo:IAO_0000119 xml:lang="en">IAO</obo:IAO_0000119>
+    </owl:Class>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes - CDPO Core
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- CDPO_0000001: sample -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label xml:lang="en">sample</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The material of interest being studied, typically biological in nature, that is contained within and imaged as part of the specimen.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes - Sample Support Components
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- CDPO_0000002: sample support component -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000002">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label xml:lang="en">sample support component</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Any component of the specimen support used in electron microscopy sample preparation.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000003: sample support material -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000003">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000002"/>
+        <rdfs:label xml:lang="en">sample support material</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Any component of the specimen support.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000004: electron microscopy grid -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000004">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000002"/>
+        <rdfs:label xml:lang="en">electron microscopy grid</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Any part of the metal sample support grid of an electron microscopy specimen.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000005: support film -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000005">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000002"/>
+        <rdfs:label xml:lang="en">support film</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Any part of the thin support applied to an electron microscopy grid.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000006: carbon support film -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000006">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000005"/>
+        <rdfs:label xml:lang="en">carbon support film</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Any part of the thin support (amorphous carbon, graphene or graphene oxide) applied to an electron microscopy grid.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000007: holey carbon film -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000007">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000006"/>
+        <rdfs:label xml:lang="en">holey carbon film</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Any part of a holey carbon support material on an electron microscopy grid.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000008: lacey carbon film -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000008">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000006"/>
+        <rdfs:label xml:lang="en">lacey carbon film</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Any part of a lacey carbon support material on an electron microscopy grid.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000009: gold support film -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000009">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000005"/>
+        <rdfs:label xml:lang="en">gold support film</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Any part of the thin support (gold) applied to an electron microscopy grid.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000010: holey gold film -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000010">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000009"/>
+        <rdfs:label xml:lang="en">holey gold film</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Any part of a holey gold support material on an electron microscopy grid.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000011: support film fragment -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000011">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000005"/>
+        <rdfs:label xml:lang="en">support film fragment</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Any detached part of the sample support film.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes - Vacuum and Sites
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- CDPO_0000012: vacuum region -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000012">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000029"/>
+        <rdfs:label xml:lang="en">vacuum region</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The empty space surrounding the specimen in the tomogram, representing areas with no material.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes - Contamination
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- CDPO_0000013: contamination -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000013">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label xml:lang="en">contamination</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Unwanted material deposited on or near the specimen that is not part of the biological sample.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000014: ice particle contamination -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000014">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000013"/>
+        <rdfs:label xml:lang="en">ice particle contamination</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Crystalline or amorphous ice particles deposited on the specimen from atmospheric moisture.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000015: sputter particle contamination -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000015">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000013"/>
+        <rdfs:label xml:lang="en">sputter particle contamination</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Metal or other particles deposited from sputtering during FIB milling or coating processes.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000016: leopard skin contamination -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000016">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000013"/>
+        <rdfs:label xml:lang="en">leopard skin contamination</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A pattern of contamination or damage characterized by irregular spots on the specimen surface, typically from beam damage or devitrification.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes - Sample Artifact Regions
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- CDPO_0000017: sample artifact region -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000017">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label xml:lang="en">sample artifact region</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Any unintended alteration or feature in the specimen caused by sample preparation or imaging.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000018: non-vitreous region -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000018">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000017"/>
+        <rdfs:label xml:lang="en">non-vitreous region</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An area of the specimen where the ice has crystallized rather than remaining in a vitrified (amorphous) state.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000019: dose-damaged region -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000019">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000017"/>
+        <rdfs:label xml:lang="en">dose-damaged region</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An area of the specimen that has been altered due to excessive electron dose exposure.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000020: protein aggregate -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000020">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label xml:lang="en">protein aggregate</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Aggregated or denatured protein material that is not representative of native biological structures.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000021: curtaining artifact region -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000021">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000017"/>
+        <rdfs:label xml:lang="en">curtaining artifact region</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Vertical striping pattern in FIB-milled lamellae caused by differential milling rates.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000022: sample tear -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000022">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000017"/>
+        <rdfs:label xml:lang="en">sample tear</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Physical discontinuity in the specimen caused by mechanical stress during handling or imaging.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes - Fiducial Markers
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- CDPO_0000023: fiducial marker -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000023">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:label xml:lang="en">fiducial marker</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A reference marker used for alignment during tomographic reconstruction.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000024: gold fiducial nanoparticle -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000024">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000023"/>
+        <rdfs:label xml:lang="en">gold fiducial nanoparticle</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Gold nanoparticles added to the specimen surface to serve as alignment markers for tomographic reconstruction.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000025: gold CLEM label -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000025">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000023"/>
+        <rdfs:label xml:lang="en">gold CLEM label</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Gold particles used as correlative light and electron microscopy markers to identify specific locations.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes - Tomographic Reconstruction Artifacts
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- CDPO_0000026: tomographic image artifact -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000026">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000101"/>
+        <rdfs:label xml:lang="en">tomographic image artifact</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A feature in a tomographic image that arises from data acquisition or processing rather than the specimen itself.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000027: tomographic reconstruction artifact -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000027">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000026"/>
+        <rdfs:label xml:lang="en">tomographic reconstruction artifact</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">A feature in the reconstructed tomogram that arises from the reconstruction process rather than the specimen.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000028: unreconstructed region -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000028">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000027"/>
+        <rdfs:label xml:lang="en">unreconstructed region</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">An area of the tomogram that could not be properly reconstructed, typically due to missing wedge effects.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000029: streak artifact -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000029">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000027"/>
+        <rdfs:label xml:lang="en">streak artifact</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Linear artifacts radiating from high-contrast features, caused by limited tilt range or alignment errors.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000030: sample charging artifact -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000030">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000026"/>
+        <rdfs:label xml:lang="en">sample charging artifact</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Image distortion caused by electrostatic charge accumulation on the specimen.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000031: laser phase plate off-plane artifact -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000031">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000026"/>
+        <rdfs:label xml:lang="en">laser phase plate off-plane artifact</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Image artifact resulting from misalignment of the laser phase plate out of the focal plane.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!-- CDPO_0000032: laser phase plate off-node artifact -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000032">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CDPO_0000026"/>
+        <rdfs:label xml:lang="en">laser phase plate off-node artifact</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">Image artifact resulting from the laser phase plate being positioned away from the optimal node position.</obo:IAO_0000115>
+    </owl:Class>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes - Tomogram Spatial Features
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- CDPO_0000033: tomogram edge -->
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CDPO_0000033">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000024"/>
+        <rdfs:label xml:lang="en">tomogram edge</rdfs:label>
+        <obo:IAO_0000115 xml:lang="en">The boundary of the reconstructed tomogram volume.</obo:IAO_0000115>
+    </owl:Class>
+
+</rdf:RDF>
