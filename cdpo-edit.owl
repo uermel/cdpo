@@ -16,7 +16,7 @@
         <dc:title xml:lang="en">CryoET Data Portal Ontology</dc:title>
         <dc:description xml:lang="en">An ontology for describing non-biological and non-relevant components observed in cryo-electron tomography (cryo-ET) data, including sample support materials, contamination, artifacts, and fiducial markers.</dc:description>
         <dc:creator>CryoET Data Portal Team</dc:creator>
-        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <terms:license rdf:resource="https://opensource.org/licenses/MIT"/>
         <owl:versionInfo>2025-02-24</owl:versionInfo>
         <rdfs:comment xml:lang="en">CDPO is built on the Basic Formal Ontology (BFO) and imports terms from OBI and IAO.</rdfs:comment>
 

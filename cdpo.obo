@@ -9,7 +9,7 @@ property_value: dc:creator "CryoET Data Portal Team" xsd:string
 property_value: dc:description "An ontology for describing non-biological and non-relevant components observed in cryo-electron tomography (cryo-ET) data, including sample support materials, contamination, artifacts, and fiducial markers." xsd:string
 property_value: dc:title "CryoET Data Portal Ontology" xsd:string
 property_value: owl:versionInfo "2025-02-24" xsd:string
-property_value: terms:license https://creativecommons.org/licenses/by/4.0/
+property_value: terms:license https://opensource.org/licenses/MIT
 
 [Term]
 id: BFO:0000001

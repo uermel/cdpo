@@ -1,4 +1,32 @@
+# Claude Code
 .claude
+
+# ROBOT tool (downloaded separately)
 bin/
+
+# Source data
 non-biological _ non-relevant tomogram components - Sheet1.csv
+
+# Build artifacts (regenerated from cdpo-edit.owl)
+cdpo.owl
+cdpo.obo
+cdpo-reasoned.owl
+
+# Reports
+reports/
+
+# Import modules (downloaded from external sources)
+imports/*.owl
+
+# Protege backup files
+*.owl~
+*~
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+*.iml
+.vscode/
 
