@@ -72,30 +72,6 @@ IAO:information content entity
 | `Makefile` | Build automation |
 | `catalog-v001.xml` | Protege import catalog |
 
-## Usage
-
-### Opening in Protege
-
-1. Open Protege
-2. File > Open > select `cdpo-edit.owl`
-3. The catalog file will resolve local imports automatically
-
-### Programmatic Access
-
-**Python (owlready2):**
-```python
-from owlready2 import get_ontology
-
-cdpo = get_ontology("cdpo.owl").load()
-sample = cdpo.search_one(label="sample")
-```
-
-**Java (OWL API):**
-```java
-OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-OWLOntology ontology = manager.loadOntologyFromOntologyDocument(new File("cdpo.owl"));
-```
-
 ## Building
 
 Requires [ROBOT](http://robot.obolibrary.org/) (included in `bin/`).
@@ -130,11 +106,6 @@ CDPO references terms from:
 - **[IAO](http://purl.obolibrary.org/obo/iao.owl)** - Information Artifact Ontology (image, information content entity)
 - **[OBI](http://purl.obolibrary.org/obo/obi.owl)** - Ontology for Biomedical Investigations (specimen)
 
-## Contributing
-
-1. Edit `cdpo-edit.owl` in Protege or a text editor
-2. Run `make report` to check for issues
-3. Run `make all` to rebuild
 
 ### Adding a New Term
 
